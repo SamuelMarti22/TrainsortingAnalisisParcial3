@@ -67,6 +67,11 @@ Al inicio de cada iteración `k`:
 
 Esto mantiene la estructura cuadrada y progresiva del llenado (“1x1, 2x2, 3x3…”).
 
+En la siguiente imagen se representa el analisis realizado y explicado anteriormente:
+
+<img width="1050" height="647" alt="image" src="https://github.com/user-attachments/assets/69378d81-a0be-471f-8de5-b972544823ba" />
+
+
 #### Heurística y limitaciones
 
 Este método **no garantiza optimalidad total**, ya que en cada paso selecciona **solo un “mejor previo”** por fila o columna.  
