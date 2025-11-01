@@ -37,6 +37,10 @@ Para ello, el algoritmo busca un **índice previo “mejor”**, llamado `indice
 
 Además, cuando hay **empates** entre varios posibles “mejores previos”, se elige el **más cercano** (menor distancia). Esto fue una elección intencional para mantener consistencia local, aunque no siempre lleva a la solución global óptima.
 
+Cuando estamos llenando una fila (es decir, con una `y` constante), vamos a buscar una fila `y¹` para comparar. Esta fila `y¹` va a ser aquella tal que `y¹ > y`, y que tenga el valor máximo en alguna de sus casillas; si hay un empate, se eligirá la que menor distancia en la recta numérica tenga. Teniendo esta fila a comparar, la regla será la siguiente: Si el valor en `y¹[i] = 0 entonces y[i] = 0`, en cualquier otro caso `y[i] = y¹[i] + 1`. Por último, si no hay una fila para comparar, eso quiere decir que ese caso es un absurdo (menor > mayor ó `y > x`), y se rellena con 0. 
+
+De manera similar, cuando estamos llenando una columna (es decir, con una `x` constante), vamos a buscar una columna `x¹` para comparar. Esta columna `x¹` va a ser aquella tal que `x > x¹`, y que tenga el valor máximo en alguna de sus casillas; si hay un empate, se eligirá la que menor distancia en la recta numérica tenga. Teniendo esta columna a comparar, la regla será la siguiente: Si el valor en `x¹[i] = 0 entonces x[i] = 0`, en cualquier otro caso `x[i] = x¹[i] + 1`. Por último, si no hay una columna para comparar, eso quiere decir que ese caso es un absurdo (menor > mayor ó `y > x`), y se rellena con 0.
+
 La regla general aplicada fue:
 
 ```

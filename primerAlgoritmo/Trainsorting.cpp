@@ -4,26 +4,6 @@
 
 using namespace std;
 
-// Imprime una matriz (vector de vectores) por filas.
-// Cada fila se imprime en una línea y los elementos se separan por un espacio.
-// Parámetros:
-//  - mat: referencia constante a la matriz a imprimir.
-// Nota: función auxiliar para depuración/visualización; no modifica la matriz.
-void printMatrix(const vector<vector<int>> &mat)
-{
-    for (const auto &row : mat)
-    {
-        for (size_t j = 0; j < row.size(); ++j)
-        {
-            cout << row[j];
-            if (j + 1 < row.size())
-                cout << ' ';
-        }
-        cout << '\n';
-    }
-    cout << "-------------------------------------" << endl;
-}
-
 // Devuelve el valor máximo entre los elementos de la última fila y la última columna.
 // Precondición: la matriz debe tener al menos una fila/columna (mat.size() > 0).
 // Si la matriz no es cuadrada, la función asume que la última columna existe (índice n-1
@@ -120,31 +100,6 @@ int indiceMayor(vector<int> &carros, vector<int> &valores, int contador, bool fi
     }
     return indiceMayor;
 }
-
-// vector<int> menorDistancia(int contador, vector<int> &carros)
-// {
-//     int indiceX, indiceY, minimaRestaY, minimaRestaX;
-//     indiceX = -1;
-//     indiceY = -1;
-//     minimaRestaY = max(carros.begin(), carros.end()) - min(carros.begin(), carros.end());
-//     minimaRestaX = max(carros.begin(), carros.end()) - min(carros.begin(), carros.end());
-//     for (int i = contador; i >= 0; i--)
-//     {
-//         int resta = carros[contador] - carros[i];
-//         if (resta < 0 && abs(resta) < minimaRestaY)
-//         {
-//             minimaRestaY = abs(resta);
-//             indiceY = i;
-//         }
-//         else if (resta > 0 && resta < minimaRestaX)
-//         {
-//             minimaRestaX = resta;
-//             indiceX = i;
-//         }
-//     }
-//     vector<int> retorno = {indiceX, indiceY};
-//     return retorno;
-// }
 
 int trainSorting(vector<int> &carros)
 {
