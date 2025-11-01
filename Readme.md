@@ -98,6 +98,11 @@ El resultado final del algoritmo es el máximo valor obtenido entre todos los í
 
 Este enfoque funciona porque la propiedad de optimalidad se conserva por índice, no de manera global. Cada posición almacena la mejor solución parcial que termina o empieza en ese punto, garantizando que las subsecuencias construidas localmente puedan combinarse de manera óptima en el resultado final. Así se evita el error común de intentar construir el tren eligiendo un único “mejor carro previo” o un par global de mínimos y máximos, que descarta combinaciones válidas y puede perder la mejor configuración total.
 
+Podemos ver el analisis anteriormente explicado representado en la siguente imagen:
+
+<img width="1550" height="362" alt="image" src="https://github.com/user-attachments/assets/76ba5c9c-3044-4aae-a0b3-c1dfaaac505a" />
+
+
 2. Descripción del mecanismo recursivo: ¿Cuál es la variable que determina el tamaño del problema? ¿Cuáles son los casos triviales? ¿Cuál es la relación de recurrencia?
 
 El tamaño del problema está determinado por la cantidad total de carros n, es decir, el número de vagones que llegan y deben organizarse para formar el tren. Cada carro representa una posible posición dentro de la secuencia final, y por lo tanto el problema completo puede verse como la combinación de todos los subproblemas definidos por cada índice i del vector carros.
